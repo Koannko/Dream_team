@@ -17,22 +17,29 @@ def user_data():
     return name_typle
 
 
-def information_name(fun, name, status):
+def information_status(fun, name, status):
     return print(fun[name][status])
 
 
-information_name(user_data(), 'Иванова Полина Павловна', 'статус')
+information_status(user_data(), 'Иванова Полина Павловна', 'статус')
 
 
-def information_name(fun, name, number):
+def information_number(fun, name, number):
     return print(fun[name][number])
 
 
-information_name(user_data(), 'Иванова Полина Павловна', 'телефон')
+information_number(user_data(), 'Иванова Полина Павловна', 'телефон')
 
 
-def information_name(fun, name, group):
+def information_faculty(fun, name, faculty):
+    return print(fun[name][faculty])
+
+
+information_faculty(user_data(), 'Иванова Полина Павловна', 'факультет')
+
+
+def information_group(fun, name, group):
     return print(fun[name][group])
 
 
-information_name(user_data(), 'Иванова Полина Павловна', 'группа')
+information_group(user_data(), 'Иванова Полина Павловна', 'группа')
