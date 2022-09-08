@@ -94,6 +94,14 @@ teachers = teachers_data()
 status = data_entry(students + teachers)
 print(status)
 
+group_list = []
+for i in range(len(students)):
+    if students[i]['группа'] == '622461':
+        group_list.append(students[i]['ФИО'])
+
+print(group_list)
+
+
 
 
 
