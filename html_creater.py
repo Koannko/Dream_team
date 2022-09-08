@@ -1,4 +1,4 @@
-#Выводит данные пользователя на страницу
+# Выводит данные пользователя на страницу
 def create(data_view):
     if (data_view):
         Surname, Name, Patronymic, password = data_view
@@ -19,7 +19,8 @@ def create(data_view):
             page.close()
         return html
 
-def get_value(errors = 0):
+
+def get_value(errors=0):
     print('Регистрация')
     my_list = []
     Surname = input('Введите свою фамилию ')
@@ -31,7 +32,3 @@ def get_value(errors = 0):
     my_list.append(Patronymic)
     my_list.append(password)
     return my_list
-#print(get_value())
-
-data_view = get_value()
-print(create(data_view))
