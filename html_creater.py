@@ -1,47 +1,37 @@
-form_data = 'C:\\OpenServer\\domains\\shape\\mes.txt'
-
+#Выводит данные пользователя на страницу
 def create(data_view):
-    Surname, Name, Patronymic = data_view
-    style = 'style="font-size:30px;"'
-    html = '<html>\n  <head></head>\n  <body>\n'
-    html += '    <p {}>Surname: {} </p>\n' \
-        .format(style, Surname)
-    html += '    <p {}>Name: {} </p>\n' \
-        .format(style, Name)
-    html += '    <p {}>Name: {} </p>\n' \
-        .format(style, Patronymic)
-    html += '    <p {}>Patronymic: {} </p>\n'
-    html += '  </body>\n</html>'
+    if (data_view):
+        Surname, Name, Patronymic, password = data_view
+        style = 'style="font-size:30px;"'
+        html = '<html>\n  <head><meta charset="UTF-8"></head>\n  <body>\n'
+        html += '    <p {}>Surname: {} </p>\n' \
+            .format(style, Surname)
+        html += '    <p {}>Name: {} </p>\n' \
+            .format(style, Name)
+        html += '    <p {}>Patronymic: {} </p>\n' \
+            .format(style, Patronymic)
+        html += '    <p {}>password: {} </p>\n' \
+            .format(style, password)
+        html += '  </body>\n</html>'
 
-    with open('index.html', 'w') as page:
-        page.write(html)
+        with open('index.html', 'w', encoding="utf-8") as page:
+            page.write(html)
+            page.close()
+        return html
 
-    return html
+def get_value(errors = 0):
+    print('Регистрация')
+    my_list = []
+    Surname = input('Введите свою фамилию ')
+    Name = input('Введите свое имя ')
+    Patronymic = input('Введите свое отчество ')
+    password = input('Введите пароль ')
+    my_list.append(Surname)
+    my_list.append(Name)
+    my_list.append(Patronymic)
+    my_list.append(password)
+    return my_list
+#print(get_value())
 
-def get_file(form_data):
-    with open(form_data, 'r', encoding="utf-8") as data:
-        my_tuple = data.read()
-        my_tuple = tuple(map(str, my_tuple.split()))
-        data.close()
-        return my_tuple
-
-data_view = get_file(form_data)
-
+data_view = get_value()
 print(create(data_view))
-
-
-def create_shape():
-    html = '<html>\n  <head></head>\n  <body>\n'
-    html += '<form action="action.php" method="post">\n'
-    html += '    <p>Surname: <input type="text" name="Surname" /></p>\n'
-    html += '    <p>Name: <input type="text" name="Name" /></p>\n'
-    html += '    <p>Patronymic: <input type="text" name="Patronymic" /></p>\n'
-    html += '    <p><input type="submit" name="auth" value="Отправить" /></p>\n'
-    html += '  </form>\n</body>\n</html>'
-
-    with open('index.php', 'w') as page:
-        page.write(html)
-
-    return html
-
-print(create_shape())
