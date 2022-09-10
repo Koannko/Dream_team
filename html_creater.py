@@ -86,7 +86,7 @@ def checking_emptiness(value_registration):
         return 0
     else:
         return 1
-print(checking_emptiness(value_registration))
+
 # Найти пользователя
 def search_user():
     print('Наити')
