@@ -3,7 +3,7 @@ Task for team work
 
 05.09
 Anna (team lead): https://github.com/Koannko
-Pavel: https://github.com/seroglazkinpavel/Python/pull/4
+Pavel: https://github.com/seroglazkinpavel/Python
 Lev: https://github.com/DarLeoo
 Elena: https://github.com/Tigreshkas
 
