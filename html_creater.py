@@ -1,28 +1,3 @@
-# Выводит данные студента на страницу
-def create_student(data_view):
-    if (data_view):
-        Patronymic, student, password, telephone, faculty, group = data_view
-        style = 'style="font-size:30px;"'
-        html = '<html>\n  <head><meta charset="UTF-8"></head>\n  <body>\n'
-        html += '    <p {}>Patronymic: {} </p>\n' \
-            .format(style, Patronymic)
-        html += '    <p {}>student: {} </p>\n' \
-            .format(style, student)
-        html += '    <p {}>password: {} </p>\n' \
-            .format(style, password)
-        html += '    <p {}>telephone: {} </p>\n' \
-            .format(style, telephone)
-        html += '    <p {}>faculty: {} </p>\n' \
-            .format(style, faculty)
-        html += '    <p {}>group: {} </p>\n' \
-            .format(style, group)
-        html += '  </body>\n</html>'
-
-        with open('index.html', 'w', encoding="utf-8") as page:
-            page.write(html)
-            page.close()
-        return html
-
 # Выводит данные учителя на страницу
 def create_teacher(data_view):
     if (data_view):
@@ -98,4 +73,18 @@ def search_user():
     my_str = (" ".join(my_list))
     return my_str
 
+
+
+def get_value(errors=0):
+    print('Регистрация')
+    my_list = []
+    Surname = input('Введите свою фамилию ')
+    Name = input('Введите свое имя ')
+    Patronymic = input('Введите свое отчество ')
+    password = input('Введите пароль ')
+    my_list.append(Surname)
+    my_list.append(Name)
+    my_list.append(Patronymic)
+    my_list.append(password)
+    return my_list
 
