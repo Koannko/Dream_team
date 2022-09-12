@@ -1,7 +1,9 @@
-from fun_teachers import *
-from fun_students import *
-from project_typle import *
-from html_creater import *
+from model.fun_teachers import *
+from model.fun_students import *
+from model.project_typle import *
+from view.html_creater import *
+from model.new_user import *
+from model.users_request import *
 
 
 def start():
@@ -9,22 +11,17 @@ def start():
     teachers = teachers_data()
     base = students + teachers
     value_sign = data_entry(base)
-    print(value_sign)
 
     if value_sign == 1:
         data_new = get_value()
-        print(data_new)
-
-    else:
-        user_fio, user_pass, status = value_sign
-        surname, name, patr = user_fio.split(' ')
-        data_view = surname, name, patr, '********'
-        create(data_view)
+        while not checking_emptiness(data_new):
+            data_new = get_value()
+        new_user(data_new)
+        return 0
+    user_fio, status = value_sign
+    surname, name, patr = user_fio.split(' ')
+    users_request(students, teachers, status)
+    return 0
 
 
 start()
-
-# Павел: добавить в регистрацию вопрос "Ученик или учитель?". Дальнейшие поля выстроить по базе данных. Функция возвращает список
-# Проверка строки на пустоту: если пустая - 0, если все ок, то 1
-
-# Лев, Елена. Функция сохраняет данные нового пользователя. На вход: список с данными как в базе данных. На выход список
