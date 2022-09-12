@@ -24,8 +24,8 @@ def users_request(students, teachers, status):
                         count += 1
                 if count != 0:
                     print(
-                        f'В группе {info_group} состоят следующие студенты:\n')
-                    for fio in info_group:
+                        f'В группе {info_group} состоят следующие студенты:')
+                    for fio in group_list:
                         print(fio)
                     return 0
                 else:
@@ -51,7 +51,7 @@ def users_request(students, teachers, status):
             for i in range(len(teachers)):
                 if teachers[i]['ФИО'] == info_te:
                     print(
-                        f'{teachers[i]["ФИО"]}: {teachers[i]["статус"]}, {teachers[i]["институт"]}.')
+                        f'{teachers[i]["ФИО"]}: {teachers[i]["почта"]}, {teachers[i]["институт"]}.')
                     return 0
             print('Преподаватель с таким именем не найден.')
             users_request(students, teachers, status)
@@ -60,7 +60,7 @@ def users_request(students, teachers, status):
             for i in range(len(students)):
                 if students[i]['ФИО'] == info_one:
                     print(
-                        f'{students[i]["ФИО"]}: {students[i]["статус"]}, {students[i]["факультет"]}.')
+                        f'{students[i]["ФИО"]}: {students[i]["почта"]}, {students[i]["факультет"]}.')
                     return 0
             print(f'Студент с таким именем не найден.')
             users_request(students, teachers, status)

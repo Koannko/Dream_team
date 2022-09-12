@@ -22,6 +22,3 @@ def start():
     surname, name, patr = user_fio.split(' ')
     users_request(students, teachers, status)
     return 0
-
-
-start()
